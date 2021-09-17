@@ -516,7 +516,7 @@ let galaxyColors = [
     new _three.Color("#0476d9").multiplyScalar(0.8)
 ];
 function dots() {
-    sampler = new _meshSurfaceSamplerJs.MeshSurfaceSampler(whale).build();
+    sampler = new _meshSurfaceSamplerJs.MeshSurfaceSampler(lynx).build();
     for(let i = 0; i < 6; i++){
         const linesMesh = new _three.Line(new _three.BufferGeometry(), linesMaterials[i % 2]);
         linesMesh.coordinates = [];
@@ -526,18 +526,18 @@ function dots() {
     }
     requestAnimationFrame(render);
 }
-let whale = null;
+let lynx = null;
 const loader = new _objloaderJs.OBJLoader();
 loader.load("lynx_bobcat_01.obj", (obj)=>{
-    whale = obj.children[0];
+    lynx = obj.children[0];
     // window.screen.height;
     // window.screen.width;
     let height = window.screen.height;
     let width = window.screen.width;
-    if (height < 850 && width < 400) whale.geometry.scale(0.05, 0.05, 0.05);
-    else whale.geometry.scale(0.065, 0.065, 0.065);
-    whale.geometry.translate(0, -3, 0);
-    whale.geometry.rotateY(0.2);
+    if (height < 850 && width < 400) lynx.geometry.scale(0.05, 0.05, 0.05);
+    else lynx.geometry.scale(0.065, 0.065, 0.065);
+    lynx.geometry.translate(0, -3, 0);
+    lynx.geometry.rotateY(0.2);
     dots();
 }, (xhr)=>console.log(xhr.loaded / xhr.total * 100 + "% loaded")
 , (err)=>console.log("An error happened", err)
