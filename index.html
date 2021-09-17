@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Two Brothers NFTs</title><meta name="description" content="Two Brothers NFTs"><meta name="author" content="Two Brothers NFTs"><link rel="icon shortcut" href="favicon.8e42b0a2.ico"><link rel="stylesheet" type="text/css" href="index2.c89b3780.css"><script type="module" src="index.57f04c0a.js"></script><script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet"><style>body{--color-text:#fff;--color-link-hover:#fff;background:#000}.content{overflow:hidden}.tbn{animation:fadeInAnimation 5s ease 1s,shadowAnimation 1s ease 3s;animation-fill-mode:forwards;animation-iteration-count:1;font-family:Cinzel Decorative,cursive;font-size:48px;opacity:0}@keyframes fadeInAnimation{0%{opacity:0}to{opacity:1}}@keyframes shadowAnimation{0%{text-shadow:1px 0 0 #000,0 -1px 0 #000,0 1px 0 #000,-1px 0 0 #000,#80b1c9 0 0 0}to{text-shadow:1px 0 0 #000,0 -1px 0 #000,0 1px 0 #000,-1px 0 0 #000,#80b1c9 1px 0 10px}}</style></head><body class="demo-1"> <main> <div class="frame"> <div class="frame__title-wrap"> <h1 class="frame__title tbn">Two Brothers NFTs</h1> </div>   </div> <div class="content"></div> </main> <script type="x-shader/x-vertex" id="vertexshader">
+			attribute float size;
+			attribute vec3 color;
+			attribute float fade;
+
+			varying vec3 vColor;
+
+			void main() {
+				vColor = color;
+				vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+				gl_PointSize = size;
+				gl_Position = projectionMatrix * mvPosition;
+			}
+		</script> <script type="x-shader/x-fragment" id="fragmentshader">
+			uniform sampler2D pointTexture;
+			varying vec3 vColor;
+			void main() {
+				gl_FragColor = vec4(vColor, 1.0);
+				gl_FragColor = gl_FragColor * texture2D(pointTexture, gl_PointCoord);
+			}
+		</script> <script src="index.dc7117e9.js" type="module"></script> </body></html>
